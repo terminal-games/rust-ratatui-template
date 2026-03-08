@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+tracing = "0.1"
 ratatui = { version = "0.30", default-features = false }
 terminal-games-sdk = { git = "https://github.com/terminal-games/terminal-games.git" }
 

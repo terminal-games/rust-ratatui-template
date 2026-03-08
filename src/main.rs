@@ -12,6 +12,16 @@ static TERMINAL_GAMES_MANIFEST: &[u8] = include_bytes!("../terminal-games.json")
 const FRAME_DURATION: Duration = Duration::from_nanos(1_000_000_000 / 60);
 
 fn main() -> std::io::Result<()> {
+    terminal_games_sdk::log::init_current_crate!();
+
+    let default_hook = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        tracing::error!("panic: {}", info);
+        default_hook(info);
+    }));
+
+    tracing::info!("rust-ratatui-template starting");
+
     let mut terminal = Terminal::new(TerminalGamesBackend::new(std::io::stdout()))?;
     terminal.clear()?;
     std::io::stdout().write(b"\x1b[?1003h")?;
