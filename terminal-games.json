@@ -1,7 +1,10 @@
 {
+  "$schema": "https://raw.githubusercontent.com/terminal-games/terminal-games/refs/heads/main/terminal-games.schema.json",
   "terminal_games_manifest_version": 1,
   "shortname": "rust-ratatui-template",
   "details": {
+    "author": "mbund",
+    "version": "$CARGO_PKG_VERSION",
     "name": {
       "en": "Rust Ratatui Template"
     },

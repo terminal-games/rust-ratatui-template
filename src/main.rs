@@ -1,13 +1,15 @@
-use std::{io::Write, time::{Duration, Instant}};
 use ratatui::{Terminal, widgets::Paragraph};
+use std::{
+    io::Write,
+    time::{Duration, Instant},
+};
 use terminal_games_sdk::{
     app,
     terminal::{TerminalGamesBackend, TerminalReader},
     terminput,
 };
 
-#[used]
-static TERMINAL_GAMES_MANIFEST: &[u8] = include_bytes!("../terminal-games.json");
+terminal_games_sdk::embed_manifest!();
 
 const FRAME_DURATION: Duration = Duration::from_nanos(1_000_000_000 / 60);
 

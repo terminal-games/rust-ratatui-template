@@ -8,6 +8,9 @@ tracing = "0.1"
 ratatui = { version = "0.30", default-features = false }
 terminal-games-sdk = { git = "https://github.com/terminal-games/terminal-games.git" }
 
+[build-dependencies]
+terminal-games-manifest = { git = "https://github.com/terminal-games/terminal-games.git" }
+
 [profile.release]
 opt-level = "z"
 lto = true
